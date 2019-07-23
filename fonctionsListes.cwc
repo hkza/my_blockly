@@ -1,0 +1,35 @@
+{
+  "content": {
+    "blockly": {
+      "content": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables>\n    <variable type=\"\" id=\"X**cla$=^fB[/U.$P/s+\">x</variable>\n    <variable type=\"\" id=\"t:.1?wWm)eR9wg]}1{UM\">list</variable>\n    <variable type=\"\" id=\"4pN=NhUk8q8GC=Osv{yV\">a</variable>\n  </variables>\n  <block type=\"variables_set\" x=\"-550\" y=\"-450\">\n    <field name=\"VAR\" id=\"t:.1?wWm)eR9wg]}1{UM\" variabletype=\"\">list</field>\n    <value name=\"VALUE\">\n      <block type=\"lists_create_with\">\n        <mutation items=\"0\"></mutation>\n      </block>\n    </value>\n    <next>\n      <block type=\"variables_set\">\n        <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n        <value name=\"VALUE\">\n          <block type=\"math_number\">\n            <field name=\"NUM\">12</field>\n          </block>\n        </value>\n        <next>\n          <block type=\"variables_set\">\n            <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n            <value name=\"VALUE\">\n              <block type=\"procedures_callreturn\">\n                <mutation name=\"plus\">\n                  <arg name=\"x\"></arg>\n                </mutation>\n                <value name=\"ARG0\">\n                  <block type=\"math_number\">\n                    <field name=\"NUM\">20</field>\n                  </block>\n                </value>\n              </block>\n            </value>\n            <next>\n              <block type=\"procedures_callnoreturn\">\n                <mutation name=\"append\">\n                  <arg name=\"x\"></arg>\n                </mutation>\n                <value name=\"ARG0\">\n                  <block type=\"variables_get\">\n                    <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n                  </block>\n                </value>\n                <next>\n                  <block type=\"procedures_callnoreturn\">\n                    <mutation name=\"append\">\n                      <arg name=\"x\"></arg>\n                    </mutation>\n                    <value name=\"ARG0\">\n                      <block type=\"math_number\">\n                        <field name=\"NUM\">0</field>\n                      </block>\n                    </value>\n                    <next>\n                      <block type=\"procedures_callnoreturn\">\n                        <mutation name=\"append\">\n                          <arg name=\"x\"></arg>\n                        </mutation>\n                        <value name=\"ARG0\">\n                          <block type=\"text\">\n                            <field name=\"TEXT\">oto</field>\n                          </block>\n                        </value>\n                        <next>\n                          <block type=\"simple_text_write_line\">\n                            <value name=\"text\">\n                              <block type=\"variables_get\">\n                                <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n                              </block>\n                            </value>\n                            <next>\n                              <block type=\"simple_text_write_line\">\n                                <value name=\"text\">\n                                  <block type=\"variables_get\">\n                                    <field name=\"VAR\" id=\"t:.1?wWm)eR9wg]}1{UM\" variabletype=\"\">list</field>\n                                  </block>\n                                </value>\n                              </block>\n                            </next>\n                          </block>\n                        </next>\n                      </block>\n                    </next>\n                  </block>\n                </next>\n              </block>\n            </next>\n          </block>\n        </next>\n      </block>\n    </next>\n  </block>\n  <block type=\"procedures_defreturn\" x=\"-210\" y=\"-390\">\n    <mutation>\n      <arg name=\"x\" varid=\"X**cla$=^fB[/U.$P/s+\"></arg>\n    </mutation>\n    <field name=\"NAME\">plus</field>\n    <comment pinned=\"false\" h=\"80\" w=\"160\">Décrire cette fonction…</comment>\n    <statement name=\"STACK\">\n      <block type=\"math_change\">\n        <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n        <value name=\"DELTA\">\n          <shadow type=\"math_number\" id=\"4hUD~6XStw$tE{L|z{|t\">\n            <field name=\"NUM\">23</field>\n          </shadow>\n          <block type=\"variables_get\">\n            <field name=\"VAR\" id=\"X**cla$=^fB[/U.$P/s+\" variabletype=\"\">x</field>\n          </block>\n        </value>\n      </block>\n    </statement>\n    <value name=\"RETURN\">\n      <block type=\"variables_get\">\n        <field name=\"VAR\" id=\"4pN=NhUk8q8GC=Osv{yV\" variabletype=\"\">a</field>\n      </block>\n    </value>\n  </block>\n  <block type=\"procedures_defnoreturn\" x=\"-230\" y=\"-250\">\n    <mutation>\n      <arg name=\"x\" varid=\"X**cla$=^fB[/U.$P/s+\"></arg>\n    </mutation>\n    <field name=\"NAME\">append</field>\n    <comment pinned=\"false\" h=\"80\" w=\"160\">Décrire cette fonction…</comment>\n    <statement name=\"STACK\">\n      <block type=\"lists_setIndex\">\n        <mutation at=\"false\"></mutation>\n        <field name=\"MODE\">INSERT</field>\n        <field name=\"WHERE\">FIRST</field>\n        <value name=\"LIST\">\n          <block type=\"variables_get\">\n            <field name=\"VAR\" id=\"t:.1?wWm)eR9wg]}1{UM\" variabletype=\"\">list</field>\n          </block>\n        </value>\n        <value name=\"TO\">\n          <block type=\"variables_get\">\n            <field name=\"VAR\" id=\"X**cla$=^fB[/U.$P/s+\" variabletype=\"\">x</field>\n          </block>\n        </value>\n      </block>\n    </statement>\n  </block>\n</xml>",
+      "name": "blockly",
+      "size": 5524,
+      "type": "application/blockly+xml",
+      "version": 1
+    },
+    "__javascript__": {
+      "content": "var x, list, a;\n\n/**\n * Décrire cette fonction…\n */\nfunction plus(x) {\n  a = (typeof a == 'number' ? a : 0) + x;\n  return a;\n}\n\n/**\n * Décrire cette fonction…\n */\nfunction append(x) {\n  list.unshift(x);\n}\n\n\nlist = [];\na = 12;\na = plus(20);\nappend(a);\nappend(0);\nappend('oto');\ncommand.writeLine(a);\ncommand.writeLine(list);\n",
+      "name": "__javascript__",
+      "size": 324,
+      "type": "application/javascript",
+      "version": 1
+    }
+  },
+  "files": {},
+  "flags": {
+    "__editor__": {}
+  },
+  "format": "Coding with Chrome File Format 3",
+  "frameworks": {},
+  "history": "",
+  "metadata": {
+    "__default__": {
+      "author": "Unknown",
+      "title": "Untitled Basic blockly file",
+      "version": "1.0"
+    }
+  },
+  "mode": "basic_blockly",
+  "ui": "blockly",
+  "view": ""
+}

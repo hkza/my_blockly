@@ -1,0 +1,295 @@
+{
+  "content": {
+    "blockly": {
+      "content": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables>\n    <variable type=\"\" id=\"LpcS;|-*{8OIO:N4``_r\">list</variable>\n    <variable type=\"\" id=\"6@|py8*-:x-dt*sdw+Ho\">v</variable>\n  </variables>\n  <block type=\"variables_set\" x=\"-230\" y=\"-309\">\n    <field name=\"VAR\" id=\"LpcS;|-*{8OIO:N4``_r\" variabletype=\"\">list</field>\n    <value name=\"VALUE\">\n      <block type=\"lists_create_with\">\n        <mutation items=\"3\"></mutation>\n        <value name=\"ADD0\">\n          <block type=\"text\">\n            <field name=\"TEXT\">A</field>\n          </block>\n        </value>\n        <value name=\"ADD1\">\n          <block type=\"text\">\n            <field name=\"TEXT\">B</field>\n          </block>\n        </value>\n        <value name=\"ADD2\">\n          <block type=\"text\">\n            <field name=\"TEXT\">V</field>\n          </block>\n        </value>\n      </block>\n    </value>\n    <next>\n      <block type=\"controls_forEach\">\n        <field name=\"VAR\" id=\"6@|py8*-:x-dt*sdw+Ho\" variabletype=\"\">v</field>\n        <value name=\"LIST\">\n          <block type=\"variables_get\">\n            <field name=\"VAR\" id=\"LpcS;|-*{8OIO:N4``_r\" variabletype=\"\">list</field>\n          </block>\n        </value>\n        <statement name=\"DO\">\n          <block type=\"simple_text_write\">\n            <value name=\"text\">\n              <block type=\"variables_get\">\n                <field name=\"VAR\" id=\"6@|py8*-:x-dt*sdw+Ho\" variabletype=\"\">v</field>\n              </block>\n            </value>\n            <next>\n              <block type=\"simple_text_write_line\">\n                <value name=\"text\">\n                  <block type=\"text\">\n                    <field name=\"TEXT\"></field>\n                  </block>\n                </value>\n              </block>\n            </next>\n          </block>\n        </statement>\n      </block>\n    </next>\n  </block>\n</xml>",
+      "name": "blockly",
+      "size": 1825,
+      "type": "application/blockly+xml",
+      "version": 1
+    },
+    "__javascript__": {
+      "content": "var list, v;\n\n\nlist = ['A', 'B', 'V'];\nfor (var v_index in list) {\n  v = list[v_index];\n  command.write(v);\n  command.writeLine('');\n}\n",
+      "name": "__javascript__",
+      "size": 135,
+      "type": "application/javascript",
+      "version": 1
+    }
+  },
+  "files": {},
+  "flags": {},
+  "format": "Coding with Chrome File Format 3",
+  "frameworks": {},
+  "history": "",
+  "metadata": {
+    "__tutorial__": {
+      "eng": {
+        "description": {
+          "mime_type": "text/markdown",
+          "text": "### Coding with Chrome\n\nThis is Coding with Chrome, Google's code editor for students and teachers. This tutorial will walk you through the Coding with Chrome user interface. Let's get started.\n"
+        },
+        "steps": [
+          {
+            "title": "Editor & Preview",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "Coding with Chrome is divided into two sections: The *Editor* and the *Preview*. When you write code in the Editor (the center window pane) Coding with Chrome puts the results in the preview on the left.\n\nYou'll notice that the Editor pane for this file has a bunch of icons (*Command*, *Draw*, *Logic*, etc.). That's because this file uses *Blockly*, a graphical programming language. When you open a file containing text-based code such as JavaScript or Python, the Editor pane will show text instead.\n"
+            },
+            "tour": [
+              {
+                "title": "Editor",
+                "attachTo": {
+                  "element": "#cwc-blockly-code",
+                  "on": "bottom"
+                },
+                "text": "Your code goes here, in the Editor pane.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Suivant",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              },
+              {
+                "title": "Preview",
+                "attachTo": {
+                  "element": "#cwc-layout-content-preview-chrome",
+                  "on": "bottom"
+                },
+                "text": "If your code draws something or writes text, that output will appear here, in the Preview.",
+                "buttons": [
+                  {
+                    "text": "Retour",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Customizing your view",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "When you need more room for your code, there are two ways to make the editor bigger:\n\n1. You can maximize the editor pane with the *Expand* button at the upper right of the Editor pane.\n1. You can drag the black line separating the Editor and Preview panes to resize each to your liking.\n"
+            },
+            "tour": [
+              {
+                "title": "Expand",
+                "attachTo": {
+                  "element": "#cwc-blockly-toolbar-expand",
+                  "on": "bottom"
+                },
+                "text": "The Expand button will make the editor bigger and hide the preview.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Suivant",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              },
+              {
+                "title": "Splitter",
+                "attachTo": {
+                  "element": "#cwc-layout-content-splitter",
+                  "on": "right"
+                },
+                "text": "You can drag the splitter to resize the Editor and Preview panes.",
+                "buttons": [
+                  {
+                    "text": "Retour",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Errors & Debugging",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "If your code has errors, the preview window will often be empty, but Coding with Chrome can help you find the problem. Click the *Console* button at the bottom left of the window to see errors and other debugging output.\n"
+            },
+            "images": [
+              {
+                "mime_type": "image/png",
+                "data": "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"
+              }
+            ],
+            "tour": [
+              {
+                "title": "Console",
+                "attachTo": {
+                  "element": "#cwc-console-button",
+                  "on": "top-start"
+                },
+                "text": "The console will give you details about errors in your code.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Title Your Project",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "The title of the current file appears in the upper left of the Coding with Chrome window. You can click the title to edit it.\n"
+            },
+            "tour": [
+              {
+                "title": "Project Title",
+                "attachTo": {
+                  "element": "#cwc-gui-title",
+                  "on": "bottom"
+                },
+                "text": "Click the title to change it.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Saving your work",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "You can save the file your working on either by typing *Ctrl+S* or clicking the *Save* icon at the upper left of the Editor pane. When you want to save your work to a new file, you'll find a *Save as new file* option in the menu at the upper left of Coding with Chrome.\n"
+            },
+            "tour": [
+              {
+                "title": "Save Icon",
+                "attachTo": {
+                  "element": "#cwc-blockly-toolbar-save",
+                  "on": "bottom"
+                },
+                "text": "The Save icon saves the current file",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Suivant",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              },
+              {
+                "title": "Menu",
+                "attachTo": {
+                  "element": "#cwc-gui-chrome div.mdl-layout__drawer-button i.material-icons",
+                  "on": "bottom-start"
+                },
+                "text": "You'll find a 'Save as new file' and other options in the menu",
+                "buttons": [
+                  {
+                    "text": "Retour",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "The Sidebar",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "By now you've noticed that Coding with Chrome has a thrid pane here on the right -- the sidebar. The sidebar can display tutorials and information about the file you're editing. The sidebar icons can perform other functions that we'll cover in future tutorials. You can hide the sidebar by clicking the highlighted sidebar icon.\n"
+            },
+            "tour": [
+              {
+                "title": "Hide the Sidebar",
+                "attachTo": {
+                  "element": ".cwc-sidebar-icon.active",
+                  "on": "right"
+                },
+                "text": "Click the highlighted sidebar icon to show or hide the sidebar.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary"
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Next Up: Blockly",
+            "description": {
+              "mime_type": "text/markdown",
+              "text": "Now that you're familiar with Coding with Chrome, let's learn to write code using Blockly. Select *Overview* from the menu at the upper left and try the Blockly tutorial next.\n"
+            },
+            "tour": [
+              {
+                "title": "Next Tutorial",
+                "attachTo": {
+                  "element": "#cwc-gui-chrome div.mdl-layout__drawer-button i.material-icons",
+                  "on": "bottom-start"
+                },
+                "text": "Select 'Overview' to get to the next tutorial.",
+                "buttons": [
+                  {
+                    "text": "Quitter",
+                    "classes": "shepherd-button-secondary",
+                    "events": {}
+                  },
+                  {
+                    "text": "Terminé",
+                    "classes": "shepherd-button-example-primary",
+                    "events": {}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "__default__": {
+      "author": "Adam Carheden",
+      "description": "An introduction to Coding with Chrome",
+      "title": "Coding With Chrome For The First Time",
+      "version": "1.0"
+    }
+  },
+  "mode": "basic_blockly",
+  "ui": "blockly",
+  "view": ""
+}

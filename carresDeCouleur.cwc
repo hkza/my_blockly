@@ -1,0 +1,35 @@
+{
+  "content": {
+    "blockly": {
+      "content": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables>\n    <variable type=\"\" id=\",!^h/QPaV;~X1_R9p1b@\">t</variable>\n    <variable type=\"\" id=\".cTv71x($/zy)4F%Q-EG\">x</variable>\n    <variable type=\"\" id=\"ojolcd+}PMGt{1_pkXaS\">y</variable>\n  </variables>\n  <block type=\"variables_set\" x=\"-270\" y=\"-370\">\n    <field name=\"VAR\" id=\",!^h/QPaV;~X1_R9p1b@\" variabletype=\"\">t</field>\n    <value name=\"VALUE\">\n      <block type=\"math_number\">\n        <field name=\"NUM\">4</field>\n      </block>\n    </value>\n    <next>\n      <block type=\"variables_set\">\n        <field name=\"VAR\" id=\".cTv71x($/zy)4F%Q-EG\" variabletype=\"\">x</field>\n        <value name=\"VALUE\">\n          <block type=\"math_number\">\n            <field name=\"NUM\">50</field>\n          </block>\n        </value>\n        <next>\n          <block type=\"variables_set\">\n            <field name=\"VAR\" id=\"ojolcd+}PMGt{1_pkXaS\" variabletype=\"\">y</field>\n            <value name=\"VALUE\">\n              <block type=\"math_number\">\n                <field name=\"NUM\">50</field>\n              </block>\n            </value>\n            <next>\n              <block type=\"controls_repeat_ext\">\n                <value name=\"TIMES\">\n                  <block type=\"variables_get\">\n                    <field name=\"VAR\" id=\",!^h/QPaV;~X1_R9p1b@\" variabletype=\"\">t</field>\n                  </block>\n                </value>\n                <statement name=\"DO\">\n                  <block type=\"controls_repeat_ext\">\n                    <value name=\"TIMES\">\n                      <block type=\"variables_get\">\n                        <field name=\"VAR\" id=\",!^h/QPaV;~X1_R9p1b@\" variabletype=\"\">t</field>\n                      </block>\n                    </value>\n                    <statement name=\"DO\">\n                      <block type=\"simple_draw_circle\">\n                        <value name=\"x\">\n                          <shadow type=\"math_number\" id=\"XC2Y#zO25=$=[j[Dps!e\">\n                            <field name=\"NUM\">150</field>\n                          </shadow>\n                          <block type=\"variables_get\">\n                            <field name=\"VAR\" id=\".cTv71x($/zy)4F%Q-EG\" variabletype=\"\">x</field>\n                          </block>\n                        </value>\n                        <value name=\"y\">\n                          <shadow type=\"math_number\" id=\".z_+VtW@5;kQzQxg^YS4\">\n                            <field name=\"NUM\">150</field>\n                          </shadow>\n                          <block type=\"variables_get\">\n                            <field name=\"VAR\" id=\"ojolcd+}PMGt{1_pkXaS\" variabletype=\"\">y</field>\n                          </block>\n                        </value>\n                        <value name=\"radius\">\n                          <shadow type=\"math_number\">\n                            <field name=\"NUM\">50</field>\n                          </shadow>\n                        </value>\n                        <value name=\"fillColor\">\n                          <shadow type=\"colour_picker\" id=\"[tgfc49TqL^+n|Z^2MwL\">\n                            <field name=\"COLOUR\">#ff0000</field>\n                          </shadow>\n                          <block type=\"colour_random\"></block>\n                        </value>\n                        <value name=\"borderColor\">\n                          <shadow type=\"colour_picker\">\n                            <field name=\"COLOUR\">#000000</field>\n                          </shadow>\n                        </value>\n                        <value name=\"borderSize\">\n                          <shadow type=\"math_number\">\n                            <field name=\"NUM\">1</field>\n                          </shadow>\n                        </value>\n                        <next>\n                          <block type=\"math_change\">\n                            <field name=\"VAR\" id=\"ojolcd+}PMGt{1_pkXaS\" variabletype=\"\">y</field>\n                            <value name=\"DELTA\">\n                              <shadow type=\"math_number\">\n                                <field name=\"NUM\">100</field>\n                              </shadow>\n                            </value>\n                          </block>\n                        </next>\n                      </block>\n                    </statement>\n                    <next>\n                      <block type=\"math_change\">\n                        <field name=\"VAR\" id=\".cTv71x($/zy)4F%Q-EG\" variabletype=\"\">x</field>\n                        <value name=\"DELTA\">\n                          <shadow type=\"math_number\">\n                            <field name=\"NUM\">100</field>\n                          </shadow>\n                        </value>\n                        <next>\n                          <block type=\"variables_set\">\n                            <field name=\"VAR\" id=\"ojolcd+}PMGt{1_pkXaS\" variabletype=\"\">y</field>\n                            <value name=\"VALUE\">\n                              <block type=\"math_number\">\n                                <field name=\"NUM\">50</field>\n                              </block>\n                            </value>\n                          </block>\n                        </next>\n                      </block>\n                    </next>\n                  </block>\n                </statement>\n              </block>\n            </next>\n          </block>\n        </next>\n      </block>\n    </next>\n  </block>\n  <block type=\"math_number\" x=\"-179\" y=\"-266\">\n    <field name=\"NUM\">3</field>\n  </block>\n  <block type=\"math_number\" x=\"-130\" y=\"-229\">\n    <field name=\"NUM\">3</field>\n  </block>\n</xml>",
+      "name": "blockly",
+      "size": 5557,
+      "type": "application/blockly+xml",
+      "version": 1
+    },
+    "__javascript__": {
+      "content": "var t, x, y;\n\nfunction colourRandom() {\n  var num = Math.floor(Math.random() * Math.pow(2, 24));\n  return '#' + ('00000' + num.toString(16)).substr(-6);\n}\n\n\nt = 4;\nx = 50;\ny = 50;\nfor (var count2 = 0; count2 < t; count2++) {\n  for (var count = 0; count < t; count++) {\n    draw.circle(x, y, 50, (colourRandom()), '#000000', 1);\n    y = (typeof y == 'number' ? y : 0) + 100;\n  }\n  x = (typeof x == 'number' ? x : 0) + 100;\n  y = 50;\n}\n\n3;\n\n3;\n",
+      "name": "__javascript__",
+      "size": 442,
+      "type": "application/javascript",
+      "version": 1
+    }
+  },
+  "files": {},
+  "flags": {
+    "__editor__": {}
+  },
+  "format": "Coding with Chrome File Format 3",
+  "frameworks": {},
+  "history": "",
+  "metadata": {
+    "__default__": {
+      "author": "Unknown",
+      "title": "Untitled Basic blockly file",
+      "version": "1.0"
+    }
+  },
+  "mode": "basic_blockly",
+  "ui": "blockly",
+  "view": ""
+}

@@ -1,0 +1,33 @@
+{
+  "content": {
+    "blockly": {
+      "content": "<xml xmlns=\"http://www.w3.org/1999/xhtml\">\n  <variables>\n    <variable type=\"\" id=\"!cN%W~(-Z6RY`*E$o^U[\">i</variable>\n    <variable type=\"\" id=\"D~w_`SweDdOx?+x0pA!L\">speed</variable>\n    <variable type=\"\" id=\"btB-]k#4d9!@L__+8she\">j</variable>\n  </variables>\n  <block type=\"variables_set\" x=\"-1310\" y=\"-1370\">\n    <field name=\"VAR\" id=\"D~w_`SweDdOx?+x0pA!L\" variabletype=\"\">speed</field>\n    <value name=\"VALUE\">\n      <block type=\"math_number\">\n        <field name=\"NUM\">0.5</field>\n      </block>\n    </value>\n    <next>\n      <block type=\"general_infinity_loop\">\n        <statement name=\"CODE\">\n          <block type=\"controls_for\">\n            <field name=\"VAR\" id=\"btB-]k#4d9!@L__+8she\" variabletype=\"\">j</field>\n            <value name=\"FROM\">\n              <block type=\"math_number\">\n                <field name=\"NUM\">150</field>\n              </block>\n            </value>\n            <value name=\"TO\">\n              <block type=\"math_number\">\n                <field name=\"NUM\">5</field>\n              </block>\n            </value>\n            <value name=\"BY\">\n              <block type=\"math_number\">\n                <field name=\"NUM\">20</field>\n              </block>\n            </value>\n            <statement name=\"DO\">\n              <block type=\"controls_for\">\n                <field name=\"VAR\" id=\"!cN%W~(-Z6RY`*E$o^U[\" variabletype=\"\">i</field>\n                <value name=\"FROM\">\n                  <block type=\"math_number\">\n                    <field name=\"NUM\">100</field>\n                  </block>\n                </value>\n                <value name=\"TO\">\n                  <block type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                  </block>\n                </value>\n                <value name=\"BY\">\n                  <block type=\"variables_get\">\n                    <field name=\"VAR\" id=\"D~w_`SweDdOx?+x0pA!L\" variabletype=\"\">speed</field>\n                  </block>\n                </value>\n                <statement name=\"DO\">\n                  <block type=\"simple_draw_circle\">\n                    <value name=\"x\">\n                      <shadow type=\"math_number\">\n                        <field name=\"NUM\">200</field>\n                      </shadow>\n                    </value>\n                    <value name=\"y\">\n                      <shadow type=\"math_number\">\n                        <field name=\"NUM\">200</field>\n                      </shadow>\n                    </value>\n                    <value name=\"radius\">\n                      <shadow type=\"math_number\" id=\"B;Dv21R8LWn_R8_d7Q]y\">\n                        <field name=\"NUM\">50</field>\n                      </shadow>\n                      <block type=\"variables_get\">\n                        <field name=\"VAR\" id=\"btB-]k#4d9!@L__+8she\" variabletype=\"\">j</field>\n                      </block>\n                    </value>\n                    <value name=\"fillColor\">\n                      <shadow type=\"colour_picker\" id=\"MxNT4u5CK8e9}|xka,H%\">\n                        <field name=\"COLOUR\">#ffffff</field>\n                      </shadow>\n                      <block type=\"colour_random\"></block>\n                    </value>\n                    <value name=\"borderColor\">\n                      <shadow type=\"colour_picker\" id=\"=GB:#f#S(J6GiYpm2x1{\">\n                        <field name=\"COLOUR\">#ffffff</field>\n                      </shadow>\n                      <block type=\"colour_random\"></block>\n                    </value>\n                    <value name=\"borderSize\">\n                      <shadow type=\"math_number\">\n                        <field name=\"NUM\">1</field>\n                      </shadow>\n                    </value>\n                  </block>\n                </statement>\n              </block>\n            </statement>\n          </block>\n        </statement>\n      </block>\n    </next>\n  </block>\n  <block type=\"variables_get\" x=\"-870\" y=\"-990\">\n    <field name=\"VAR\" id=\"!cN%W~(-Z6RY`*E$o^U[\" variabletype=\"\">i</field>\n  </block>\n</xml>",
+      "name": "blockly",
+      "size": 3994,
+      "type": "application/blockly+xml",
+      "version": 1
+    },
+    "__javascript__": {
+      "content": "var i, speed, j;\n\nfunction colourRandom() {\n  var num = Math.floor(Math.random() * Math.pow(2, 24));\n  return '#' + ('00000' + num.toString(16)).substr(-6);\n}\n\n\nspeed = 0.5;\nlet infinity_loop = function() {\n  try {\n  for (j = 150; j >= 5; j -= 20) {\n    var i_inc = Math.abs(speed);\n    if (100 > 0) {\n      i_inc = -i_inc;\n    }\n    for (i = 100; i_inc >= 0 ? i <= 0 : i >= 0; i += i_inc) {\n      draw.circle(200, 200, j, (colourRandom()), (colourRandom()), 1);\n    }\n  }\n  } catch (err) {\n    return;\n  }\n  window.setTimeout(infinity_loop, 50);\n};\ninfinity_loop();\n\ni;\n",
+      "name": "__javascript__",
+      "size": 571,
+      "type": "application/javascript",
+      "version": 1
+    }
+  },
+  "files": {},
+  "flags": {},
+  "format": "Coding with Chrome File Format 3",
+  "frameworks": {},
+  "history": "",
+  "metadata": {
+    "__default__": {
+      "author": "Markus Bordihn",
+      "title": "Basic: Text loop",
+      "version": "1.0"
+    }
+  },
+  "mode": "basic_blockly",
+  "ui": "blockly",
+  "view": ""
+}
